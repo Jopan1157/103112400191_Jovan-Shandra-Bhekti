@@ -2,14 +2,14 @@
 using namespace std;
 
 int main() {
-    float angka1,angka2 ;
+    float A, B ;
     cout << "masukan angka 1: ";
-    cin >> angka1;
+    cin >> A;
     cout << "masukan angka 2: ";
-    cin >> angka2;
+    cin >> B;
 
-    cout << "penjumlahan :" << angka1 + angka2 << endl ;
-    cout << "pengurangan :" << angka1 - angka2 << endl ;
-    cout << "perkalian :" << angka1 * angka2 << endl;
-    cout << "pembagian :" <<  angka1 / angka2 << endl;
+    cout << "penjumlahan :" << (A + B) << endl ;
+    cout << "pengurangan :" << (A - B) << endl ;
+    cout << "perkalian :" << (A * B) << endl;
+    cout << "pembagian :" <<  (A / B) << endl;
 }
