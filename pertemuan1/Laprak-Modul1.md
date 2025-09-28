@@ -144,7 +144,7 @@ int main() {
 ### Output Unguided 1 :
 
 ##### Output 1
-![Screenshot Output Unguided 1_1](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/pertemuan1/ss-soal-1.png)
+![Screenshot Output Unguided 1_1](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/pertemuan1/ss-jwb-1.png)
 
 ##### Output 2
 ![Screenshot Output Unguided 1_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
@@ -155,41 +155,118 @@ Program ini berfungsi menghitung operasi aritmatika dari dua bilangan bertipe da
 
 
 ```C++
-source code unguided 2
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Masukkan angka (0-100): ";
+    cin >> n;
+
+    if (n < 0 || n > 100) {
+        cout << "Angka di luar jangkauan!" << endl;
+        return 0;
+    }
+
+    string kata[] = {"", "satu", "dua", "tiga", "empat", "lima",
+                     "enam", "tujuh", "delapan", "sembilan"};
+
+    string hasil = "";
+
+    if (n == 0) {
+        hasil = "nol";
+    } 
+    else if (n == 100) {
+        hasil = "seratus";
+    } 
+    else if (n >= 20) {
+        hasil += kata[n / 10] + " puluh";
+        if (n % 10 != 0) hasil += " " + kata[n % 10];
+    } 
+    else if (n >= 12) {
+        hasil += kata[n % 10] + " belas";
+    } 
+    else if (n == 11) {
+        hasil = "sebelas";
+    } 
+    else if (n == 10) {
+        hasil = "sepuluh";
+    } 
+    else {
+        hasil = kata[n];
+    }
+
+    cout << hasil << endl;
+    return 0;
+}
+
 ```
 ### Output Unguided 2 :
 
 ##### Output 1
-![Screenshot Output Unguided 2_1](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
-
-contoh :
-![Screenshot Output Unguided 2_1](https://github.com/DhimazHafizh/2311102151_Muhammad-Dhimas-Hafizh-Fathurrahman/blob/main/Pertemuan1_Modul1/Output-Unguided2-1.png)
+![Screenshot Output Unguided 1_1](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/pertemuan1/ss-jwb-2.png)
 
 ##### Output 2
 ![Screenshot Output Unguided 2_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
 
-penjelasan unguided 2
+program ini mampu mengubah bilangan bulai positif antara 1-100 menjadi bentuk kata 
 
-### 3. (isi dengan soal unguided 3)
+### 3. ![Screenshot Soal Unguided 3](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/pertemuan1/soal3.png)
 
 ```C++
-source code unguided 3
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Input: ";
+    cin >> n;
+
+    cout << "Output:" << endl;
+
+    for (int i = n; i >= 1; i--) {
+        
+        for (int s = 0; s < n - i; s++) {
+            cout << "  ";
+        }
+
+       
+        for (int j = i; j >= 1; j--) {
+            cout << j << " ";
+        }
+
+        
+        cout << "* ";
+
+       
+        for (int j = 1; j <= i; j++) {
+            cout << j << " ";
+        }
+
+        cout << endl; 
+    }
+
+    for (int s = 0; s < n; s++) {
+        cout << "  ";
+    }
+    cout << "*" << endl;
+
+    return 0;
+}
+
 ```
 ### Output Unguided 3 :
 
 ##### Output 1
-![Screenshot Output Unguided 3_1](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
-
-contoh :
-![Screenshot Output Unguided 3_1](https://github.com/DhimazHafizh/2311102151_Muhammad-Dhimas-Hafizh-Fathurrahman/blob/main/Pertemuan1_Modul1/Output-Unguided3-1.png)
+![Screenshot Output Unguided 1_1](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/pertemuan1/ss-jwb-3.png)
 
 ##### Output 2
 ![Screenshot Output Unguided 3_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
 
-penjelasan unguided 3
+program ini membuat pola angka menurun ke kiri, bintang di tengah, dan angka menaik ke kanan, dengan tambahan satu bintang di bagian bawah.
 
 ## Kesimpulan
-...
+dalam praktikum modul 1 ini mempelajari dasar penggunaan C++ seperti operator aritmatika,percabangan(if-else, switch-case),perulangan(for,while,do-while),selain itu, terdapat latihan unguided yang memberikan pengalaman seperti mengimplementasikan operasi aritmatika menggunakan tipe data float, mengubah angka menjadi bentuk kata, serta membuat pola dengan kombinasi angka dan simbol.
 
 ## Referensi
 [1] Suryanto, D. (2023). Penggunaan bahasa C++ dalam perkuliahan jurusan Teknik Elektro Fakultas Teknik. Jurnal Majemuk, 9(2), 45–53.
