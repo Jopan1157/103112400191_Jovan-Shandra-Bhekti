@@ -3,9 +3,9 @@ using namespace std;
 
 int main() {
     float A, B ;
-    cout << "masukan angka 1: ";
+    cout << "masukan A: ";
     cin >> A;
-    cout << "masukan angka 2: ";
+    cout << "masukan B: ";
     cin >> B;
 
     cout << "penjumlahan :" << (A + B) << endl ;
