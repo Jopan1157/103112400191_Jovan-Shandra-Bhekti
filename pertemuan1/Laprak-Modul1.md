@@ -4,17 +4,17 @@
 ## Dasar Teori
 Salah satu bahasa tingkat tinggi yang banyak digunakan adalah C++, yang dikembangkan oleh Bjarne Stroustrup sebagai pengembangan dari bahasa C dengan menambahkan konsep kelas (C with Classes). C++ telah berevolusi melalui berbagai standar, seperti C++98, C++11, C++14, hingga C++20, dan tetap menjadi bahasa yang relevan untuk berbagai aplikasi. Keunggulan C++ terletak pada kemampuannya menggabungkan pemrograman prosedural dan berorientasi objek, serta pengendalian langsung terhadap memori. Hal ini membuat C++ banyak digunakan dalam pengembangan perangkat lunak sistem, aplikasi yang membutuhkan performa tinggi, serta bidang teknik yang memerlukan pengolahan data yang kompleks.[1] 
 
-### A. ...<br/>
-...
-#### 1. ...
-#### 2. ...
-#### 3. ...
+### A. Operasi Aritmatika <br/>
 
-### B. ...<br/>
-...
-#### 1. ...
-#### 2. ...
-#### 3. ...
+Operator aritmatika merupakan operator dasar yang digunakan untuk menjalankan perhitungan matematika seperti tambah, kurang, kali, dan bagi. Dalam bahasa C++, operator ini berfungsi untuk mengolah data yang berbentuk numerik.
+
+### B. Percabangan <br/>
+
+Percabangan (control structure) dalam C++ adalah struktur logika yang digunakan untuk menentukan alur program berdasarkan kondisi tertentu (benar/salah). Dengan percabangan, program bisa mengambil keputusan dan mengeksekusi bagian kode yang sesuai.
+
+### C. Perulangan <br/>
+
+Perulangan (loop) adalah struktur kontrol dalam C++ yang digunakan untuk mengulang eksekusi suatu blok kode selama kondisi tertentu terpenuhi. Dengan perulangan, kita bisa mengurangi penulisan kode yang berulang-ulang.
 
 ## Guided 
 
@@ -146,9 +146,6 @@ int main() {
 ##### Output 1
 ![Screenshot Output Unguided 1_1](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/pertemuan1/ss-jwb-1.png)
 
-##### Output 2
-![Screenshot Output Unguided 1_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
- 
 Program ini berfungsi menghitung operasi aritmatika dari dua bilangan bertipe data float yang di masukan user
 
 ### 2. Buatlah sebuah program yang menerima masukan angka dan mengeluarkan output nilai angka tersebut dalam bentuk tulisan. Angka yang akan di- input-kan user adalah bilangan bulat positif mulai dari 0 s.d 100
@@ -158,43 +155,34 @@ Program ini berfungsi menghitung operasi aritmatika dari dua bilangan bertipe da
 #include <iostream>
 using namespace std;
 
+string satuan[]  = {"", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan"};
+string belasan[] = {"sepuluh", "sebelas", "dua belas", "tiga belas", "empat belas", "lima belas", "enam belas", "tujuh belas", "delapan belas", "sembilan belas"};
+string puluhan[] = {"", "", "dua puluh", "tiga puluh", "empat puluh", "lima puluh", "enam puluh", "tujuh puluh", "delapan puluh", "sembilan puluh"};
+
 int main() {
     int n;
-    cout << "Masukkan angka (0-100): ";
+    cout << "Masukkan angka (1-100): ";
     cin >> n;
-
-    if (n < 0 || n > 100) {
-        cout << "Angka di luar jangkauan!" << endl;
-        return 0;
-    }
-
-    string kata[] = {"", "satu", "dua", "tiga", "empat", "lima",
-                     "enam", "tujuh", "delapan", "sembilan"};
 
     string hasil = "";
 
-    if (n == 0) {
-        hasil = "nol";
-    } 
-    else if (n == 100) {
-        hasil = "seratus";
-    } 
-    else if (n >= 20) {
-        hasil += kata[n / 10] + " puluh";
-        if (n % 10 != 0) hasil += " " + kata[n % 10];
-    } 
-    else if (n >= 12) {
-        hasil += kata[n % 10] + " belas";
-    } 
-    else if (n == 11) {
-        hasil = "sebelas";
-    } 
-    else if (n == 10) {
-        hasil = "sepuluh";
-    } 
-    else {
-        hasil = kata[n];
+    if (n >= 100) {
+        hasil += (n/100 == 1 ? "seratus" : satuan[n/100] + " ratus");
+        n %= 100;
+        if (n) hasil += " ";
     }
+
+    if (n >= 20) {
+        hasil += puluhan[n/10];
+        n %= 10;
+        if (n) hasil += " ";
+    } 
+    else if (n >= 10) {
+        hasil += belasan[n-10];
+        n = 0;
+    }
+
+    if (n > 0) hasil += satuan[n];
 
     cout << hasil << endl;
     return 0;
@@ -206,8 +194,6 @@ int main() {
 ##### Output 1
 ![Screenshot Output Unguided 1_1](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/pertemuan1/ss-jwb-2.png)
 
-##### Output 2
-![Screenshot Output Unguided 2_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
 
 program ini mampu mengubah bilangan bulai positif antara 1-100 menjadi bentuk kata 
 
@@ -260,8 +246,6 @@ int main() {
 ##### Output 1
 ![Screenshot Output Unguided 1_1](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/pertemuan1/ss-jwb-3.png)
 
-##### Output 2
-![Screenshot Output Unguided 3_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
 
 program ini membuat pola angka menurun ke kiri, bintang di tengah, dan angka menaik ke kanan, dengan tambahan satu bintang di bagian bawah.
 
