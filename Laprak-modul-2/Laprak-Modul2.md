@@ -2,7 +2,7 @@
 <p align="center">Jovan Shandra Bhekti - 103112400191</p>
 
 ## Dasar Teori
-Menurut Suryanto (2023), C++ merupakan salah satu bahasa pemrograman yang banyak digunakan dalam dunia akademik maupun praktis karena mendukung pemrograman prosedural maupun berorientasi objek. Dalam penggunaannya, terdapat berbagai konsep dasar yang penting dipahami, di antaranya array dan pointer. Array adalah struktur data yang digunakan untuk menyimpan sekumpulan data dengan tipe yang sama dalam satu variabel. Setiap elemen array dapat diakses melalui indeks yang dimulai dari 0 hingga ukuran array dikurangi satu. Array mempermudah penyimpanan dan pengolahan banyak data dengan tipe yang sama, sehingga mereka efektif dalam penggunaan memori dan pemanggilan data.Pointer adalah variabel unik yang menyimpan alamat memori untuk variabel lain. Dengan menggunakan alamat yang ditunjuk, program dapat mengakses dan mengubah data secara tidak langsung. Karena nama array sebenarnya mewakili alamat elemen pertama dalam array, pointer sangat penting untuk mengelola array. Oleh karena itu, elemen dapat diakses melalui aritmatika pointer dan indeks, yang keduanya memberikan hasil yang sama.[1]
+Array adalah struktur data yang terdiri dari sekumpulan elemen dengan tipe data yang sama yang disimpan secara berurutan di dalam memori dan memiliki indeks yang dimulai dari nol. Menggunakan array memudahkan penyimpanan dan pengolahan data yang sangat besar tanpa harus membuat variabel baru untuk setiap nilai, yang membuatnya lebih efisien dan terstruktur.Pointer adalah variabel unik yang menyimpan alamat memori variabel lain. Dengan menggunakan alamatnya, programmer dapat mengakses dan mengubah nilai variabel secara tidak langsung. Konsep ini sering digunakan untuk mengoptimalkan program, seperti dalam hal pengaksesan array dinamis dan manipulasi data melalui fungsi. Pointer juga sangat penting untuk menggunakan struktur data yang lebih kompleks seperti linked list dan tree.[1]
 
 ### A. Array <br/>
 
@@ -11,6 +11,10 @@ Array di C++ adalah struktur data yang digunakan untuk menyimpan sekumpulan data
 ### B. Pointer <br/>
 
 Pointer di C++ adalah variabel khusus yang menyimpan alamat memori dari suatu variabel lain. Dengan pointer, kita bisa mengakses dan memanipulasi data secara tidak langsung melalui alamat memori.
+
+### C. Prosedur <br/>
+
+Proses mencetak nilai atau hasil disimpan dalam blok subrutinnya sendiri di program utama, yang kemudian disebut prosesnya. Proses ini memiliki kemampuan untuk mengembalikan atau tidak mengembalikan nilai atau hasil, dan variabel tertentu diperlukan untuk melakukannya.
 
 ## Guided 
 
@@ -290,8 +294,8 @@ Program tersebut berfungsi untuk menghitung luas dan keliling persegi panjang me
 
 
 ## Kesimpulan
-dalam praktikum modul 1 ini mempelajari dasar penggunaan C++ seperti operator aritmatika,percabangan(if-else, switch-case),perulangan(for,while,do-while),selain itu, terdapat latihan unguided yang memberikan pengalaman seperti mengimplementasikan operasi aritmatika menggunakan tipe data float, mengubah angka menjadi bentuk kata, serta membuat pola dengan kombinasi angka dan simbol.
+Dalam praktikum modul 2, membahas tentang array , pointer, dan prosedur dalam bahasa pemrograman c++. Penggunaan array memungkinkan pengolahan data dalam jumlah besar secara efisien tanpa harus mendeklarasikan banyak variabel. Sementara itu konsep pointer memberikan fleksibilitas tinggi dalam pengelolaan memori dan efisiensi program, terutama pada pengolahan array dinamis dan struktur data kompleks seperti linked list dan tree. Selain itu, penggunaan fungsi atau prosedur membantu memecah program menjadi bagian bagian kecil yang terstruktur dan mudah di kelola. Dengan menggabungkan konsep array dan pointer di dalam fungsi, programmer dapat membuat kode yang lebih efisien, modular, dan mudah dibaca.
 
 ## Referensi
-[1] Suryanto, D. (2023). Penggunaan bahasa C++ dalam perkuliahan jurusan Teknik Elektro Fakultas Teknik. Jurnal Majemuk, 9(2), 45–53.
+[1] Sindar, A., & R. M. S. (2019). Struktur Data dan Algoritma Dengan C++ (Vol. 1). CV. AA. Rizky.
 <br>...
