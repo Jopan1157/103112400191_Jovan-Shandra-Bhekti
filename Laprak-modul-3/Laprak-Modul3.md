@@ -194,7 +194,7 @@ Program ini digunakan untuk menginput dan menghitung nilai akhir beberapa mahasi
 
 ```C++
 
-pelajaran.h
+#pelajaran.h
 
 #ifndef PELAJARAN_H
 #define PELAJARAN_H
@@ -213,7 +213,7 @@ void tampil_pelajaran(pelajaran pel);
 #endif
 
 
-pelajaran.cpp
+#pelajaran.cpp
 
 #include "pelajaran.h"
 
@@ -230,7 +230,7 @@ void tampil_pelajaran(pelajaran pel) {
 }
 
 
-main.cpp
+#main.cpp
 
 #include <iostream>
 #include "pelajaran.h"
