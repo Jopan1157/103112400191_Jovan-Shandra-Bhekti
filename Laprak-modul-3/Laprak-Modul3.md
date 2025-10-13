@@ -14,7 +14,7 @@ merupakan definisi STATIK.
 
 ## Guided 
 
-### 1. Struct
+### 1. 
 
 ```C++
 #include <iostream>
@@ -51,93 +51,64 @@ int main() {
 ```
 Program ini berfungsi untuk menginput data seorang mahasiswa berupa nama, nilai pertama, dan nilai kedua, kemudian menghitung serta menampilkan nilai rata-ratanya.
 
-### 2. Single Linked list
+### 2. 
 
 ```C++
-#include <iostream>
-using namespace std;
+file mahasiswa.h
 
-struct node{
-    float data;
-    node* next;
-
-}; 
-
-struct list{
-    node* first;
+#ifndef MAHASISWA_H
+#define MAHASISWA_H
+struct mahasiswa
+{
+  char nim[10];
+  int nilai1, nilai2;
 
 };
 
-void buatList(list &L){
-    L.first = NULL;
-    
+void inputMhs(mahasiswa &m);
+float rata2(mahasiswa m);
+
+#endif
+
+file mahasiswa.cpp
+
+#include <iostream>
+#include "mahasiswa.h"
+using namespace std;
+
+void inputMhs(mahasiswa &m){
+    cout << " input nim : ";
+    cin >> m.nim;
+    cout << " input nilai 1 : ";
+    cin >> m.nilai1;
+    cout << " input nilai 2 : ";
+    cin >> m.nilai2;
+
 }
 
-node* buatElemen(float X){
-    node* elm = new node;
-    elm -> data = X;
-    elm -> next = NULL;
-    return elm;
-}
-void insertAscending( list &L, node* elm){
-    if (L.first == NULL || elm -> data < L.first -> data ){
-        elm -> next = L.first;
-        L.first = elm;
-
-    }
-    else{
-        node* before = L.first;
-        node* after = L.first -> next;
-        while(after != NULL && elm -> data > after -> data){
-            before = after;
-            after = after -> next;
-        }
-        elm -> next = after;
-        before -> next = elm;
-    }
+float rata2(mahasiswa m){
+    return (float)(m.nilai1 + m.nilai2) / 2;
 }
 
-void tampilList(list L){
-    node* p = L.first;
-    while(p != NULL){
-        cout << p -> data << " -> ";
-        p = p -> next;
-    }
-    cout << "NULL " << endl;
-}
+file main.cpp
+
+#include <iostream>
+#include "mahasiswa.h"
+#include <cstdlib>
+using namespace std;
 
 int main(){
-    list L;
-    buatList(L);
+    mahasiswa mhs;
+    inputMhs(mhs);
 
-    node* satu = buatElemen(10.5);
-    node* dua = buatElemen(12.0);
-    node* tiga =  buatElemen(20.9);
-    node* empat = buatElemen(25.1);
-
-    satu -> next = dua;
-    dua -> next = tiga;
-    tiga -> next = empat;
-
-    L.first = satu;
-    
-    cout << "isi list : " << endl;
-    tampilList(L);
-
-    float X;
-    cout << "Masukan nilai : ";
-    cin >>  X;
-
-    node* elm = buatElemen(X);
-    insertAscending(L, elm );
-    cout << "List setelah ditambah : " << endl;
-    tampilList(L);
+    cout << "rata -rata nilai adalah : " << rata2 
+    (mhs) << endl;
+    system("pause");
     return 0;
 }
 
 ```
-Program ini mengimplementasikan struktur data linked list satu arah yang berisi data bertipe float, dan menambahkan elemen baru secara ascending berdasarkan nilai.
-
+Program di atas terdiri dari tiga file (mahasiswa.h, mahasiswa.cpp, dan main.cpp) yang bersama-sama digunakan untuk menginput data mahasiswa (NIM dan dua nilai) serta menghitung rata-rata dari dua nilai tersebut.
 ### 3. 
 
 ```C++
@@ -192,10 +163,8 @@ Program ini digunakan untuk menginput dan menghitung nilai akhir beberapa mahasi
 
 ### 2. ![Screenshot Soal Unguided 2](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-3/ss-soal-2.png)
 
-
-```C++
-
 file pelajaran.h 
+```C++
 
 #ifndef PELAJARAN_H
 #define PELAJARAN_H
@@ -212,9 +181,11 @@ pelajaran create_pelajaran(string namapel, string kodepel);
 void tampil_pelajaran(pelajaran pel);
 
 #endif
-
+```
 
 file pelajaran.cpp 
+
+```C++
 
 #include "pelajaran.h"
 
@@ -230,9 +201,10 @@ void tampil_pelajaran(pelajaran pel) {
     cout << "nilai  : " << pel.kodeMapel << endl;
 }
 
-
+```
 file main.cpp 
 
+```C++
 #include <iostream>
 #include "pelajaran.h"
 using namespace std;
