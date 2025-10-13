@@ -2,7 +2,8 @@
 <p align="center">Jovan Shandra Bhekti - 103112400191</p>
 
 ## Dasar Teori
-Array adalah struktur data yang terdiri dari sekumpulan elemen dengan tipe data yang sama yang disimpan secara berurutan di dalam memori dan memiliki indeks yang dimulai dari nol. Menggunakan array memudahkan penyimpanan dan pengolahan data yang sangat besar tanpa harus membuat variabel baru untuk setiap nilai, yang membuatnya lebih efisien dan terstruktur.Pointer adalah variabel unik yang menyimpan alamat memori variabel lain. Dengan menggunakan alamatnya, programmer dapat mengakses dan mengubah nilai variabel secara tidak langsung. Konsep ini sering digunakan untuk mengoptimalkan program, seperti dalam hal pengaksesan array dinamis dan manipulasi data melalui fungsi. Pointer juga sangat penting untuk menggunakan struktur data yang lebih kompleks seperti linked list dan tree.[1]
+Abstract Data Type (ADT) atau Tipe Data Abstrak merupakan suatu konsep penting dalam pemrograman yang berhubungan dengan cara pengorganisasian dan pengelolaan data. ADT didefinisikan sebagai model matematis dari suatu tipe data yang disertai dengan sekumpulan operasi yang dapat dilakukan terhadap data tersebut, tanpa memperhatikan bagaimana data dan operasi tersebut diimplementasikan secara fisik dalam program [1].
+Konsep ADT menekankan pada abstraksi, yaitu pemisahan antara definisi logis dan implementasi konkret. Artinya, pengguna suatu ADT hanya perlu mengetahui fungsi dan cara menggunakan operasi yang disediakan, tanpa harus memahami detail penyimpanan data atau algoritma yang digunakan di dalamnya. Hal ini bertujuan untuk meningkatkan modularitas dan kemudahan pemeliharaan program.
 
 ### A. Abstract Data Type (ADT) <br/>
 
@@ -194,7 +195,7 @@ Program ini digunakan untuk menginput dan menghitung nilai akhir beberapa mahasi
 
 ```C++
 
-#pelajaran.h
+file pelajaran.h 
 
 #ifndef PELAJARAN_H
 #define PELAJARAN_H
@@ -213,7 +214,7 @@ void tampil_pelajaran(pelajaran pel);
 #endif
 
 
-#pelajaran.cpp
+file pelajaran.cpp 
 
 #include "pelajaran.h"
 
@@ -230,7 +231,7 @@ void tampil_pelajaran(pelajaran pel) {
 }
 
 
-#main.cpp
+file main.cpp 
 
 #include <iostream>
 #include "pelajaran.h"
@@ -266,51 +267,68 @@ int main() {
 #include <iostream>
 using namespace std;
 
-float nilaiAkhir(float uts, float uas, float tugas) {
-    return (0.3 * uts) + (0.4 * uas) + (0.3 * tugas);
+
+void tampilArray(int data[3][3]) {
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++)
+            cout << data[i][j] << " ";
+        cout << endl;
+    }
+}
+
+
+void tukarElemen(int a[3][3], int b[3][3], int i, int j) {
+    int temp = a[i][j];
+    a[i][j] = b[i][j];
+    b[i][j] = temp;
+}
+
+
+void tukarPtr(int *p1, int *p2) {
+    int temp = *p1;
+    *p1 = *p2;
+    *p2 = temp;
 }
 
 int main() {
-    string nama, nim;
-    float uts, uas, tugas;
-    int jumlah;
+    int A[3][3] = {{4,2,3},{6,3,2},{8,5,9}};
+    int B[3][3] = {{9,4,6},{3,1,2},{7,4,4}};
+    int x = 10, y = 20;
 
-    cout << "Masukkan jumlah mahasiswa (maksimal 10): ";
-    cin >> jumlah;
+    cout << "Array A:\n";
+    tampilArray(A);
+    cout << "Array B:\n";
+    tampilArray(B);
 
-    for (int i = 0; i < jumlah; i++) {
-        cout << "\nData Mahasiswa ke-" << i + 1 << endl;
-        cout << "Nama  : "; cin >> nama;
-        cout << "NIM   : "; cin >> nim;
-        cout << "Nilai UTS   : "; cin >> uts;
-        cout << "Nilai UAS   : "; cin >> uas;
-        cout << "Nilai Tugas : "; cin >> tugas;
+    
+    tukarElemen(A, B, 1, 1);
 
-        float hasil = nilaiAkhir(uts, uas, tugas);
-        cout << "Hasil Nilai Akhir: " << hasil << endl;
-    }
+    cout << "\nSetelah tukar elemen (1,1):\n";
+    cout << "Array A:\n";
+    tampilArray(A);
+    cout << "Array B:\n";
+    tampilArray(B);
+
+    cout << "\nSebelum tukar pointer: x=" << x << ", y=" << y << endl;
+    tukarPtr(&x, &y);
+    cout << "Sesudah tukar pointer: x=" << x << ", y=" << y << endl;
 
     return 0;
 }
-
-
 
 ```
 ### Output Unguided 3 :
 
 ##### Output 1
-![Screenshot Output Unguided 3](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-3/ss-jwb-1.png)
+![Screenshot Output Unguided 3](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-3/ss-jwb-3.png)
 
-Program ini digunakan untuk menginput dan menghitung nilai akhir beberapa mahasiswa berdasarkan nilai UTS, UAS, dan Tugas.
-
-
-
-Program ini mengelola data pelajaran secara terpisah dan terstruktur menggunakan konsep header dan implementasi file, sehingga kode lebih modular, rapi, dan mudah dipelihara.
+Program ini digunakan untuk menampilkan isi dua array 2D berukuran 3×3, kemudian menukar elemen tertentu di posisi yang sama antar dua array, serta menukar nilai dua variabel menggunakan pointer.
 
 
 ## Kesimpulan
-Dalam praktikum modul 2, membahas tentang array , pointer, dan prosedur dalam bahasa pemrograman c++. Penggunaan array memungkinkan pengolahan data dalam jumlah besar secara efisien tanpa harus mendeklarasikan banyak variabel. Sementara itu konsep pointer memberikan fleksibilitas tinggi dalam pengelolaan memori dan efisiensi program, terutama pada pengolahan array dinamis dan struktur data kompleks seperti linked list dan tree. Selain itu, penggunaan fungsi atau prosedur membantu memecah program menjadi bagian bagian kecil yang terstruktur dan mudah di kelola. Dengan menggabungkan konsep array dan pointer di dalam fungsi, programmer dapat membuat kode yang lebih efisien, modular, dan mudah dibaca.
+
+Dari hasil praktikum Modul 3 tentang Abstract Data Type (ADT) dapat disimpulkan bahwa ADT merupakan konsep dasar dalam pemrograman yang berfungsi untuk memisahkan antara definisi logis suatu tipe data dan implementasi teknisnya. Dengan adanya ADT, program dapat dibuat lebih modular, terstruktur, dan mudah dipelihara, karena setiap tipe data dan operasinya dikelola dalam satu kesatuan logis yang terpisah dari cara implementasinya.
 
 ## Referensi
-[1] Sindar, A., & R. M. S. (2019). Struktur Data dan Algoritma Dengan C++ (Vol. 1). CV. AA. Rizky.
+[1] Pratama, M. A. (2020). STRUKTUR DATA ARRAY DUA DIMENSI PADA PEMROGRAMAN C++.
 <br>...
