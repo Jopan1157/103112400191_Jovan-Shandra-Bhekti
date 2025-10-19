@@ -459,89 +459,111 @@ program ini berfungsi untuk membuat, menampilkan, menambah, menghitung, dan meng
 
 ### 1. ![Screenshot Output Unguided 1_1](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-4/ss-soal1.png)
 
+singlylist.h
+
 ```C++
+#ifndef SINGLYLIST_H
+#define SINGLYLIST_H
+#define Nil NULL
+
 #include <iostream>
 using namespace std;
 
-void jumlahMatriks(int A[3][3], int B[3][3], int hasil[3][3]) {
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            hasil[i][j] = A[i][j] + B[i][j];
-        }
-    }
+
+
+typedef int infotype;
+typedef struct ElmList *address;
+
+
+struct ElmList {
+    infotype info;
+    address next;
+};
+
+
+struct List {
+    address First;
+};
+
+
+void CreateList(List &L);
+address alokasi(infotype x);
+void dealokasi(address P);
+void printInfo(List L);
+void insertFirst(List &L, address P);
+
+#endif
+```
+singlylist.cpp
+
+```C++
+#include "Singlylist.h"
+#include <iostream>
+using namespace std;
+
+void CreateList(List &L) {
+    L.First = Nil;
 }
 
 
-void kurangMatriks(int A[3][3], int B[3][3], int hasil[3][3]) {
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            hasil[i][j] = A[i][j] - B[i][j];
-        }
+address alokasi(infotype x) {
+    address P = new ElmList;
+    if (P != Nil) {
+        P->info = x;
+        P->next = Nil;
     }
+    return P;
 }
 
 
-void kaliMatriks(int A[3][3], int B[3][3], int hasil[3][3]) {
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            hasil[i][j] = 0;
-            for (int k = 0; k < 3; k++) {
-                hasil[i][j] += A[i][k] * B[k][j];
-            }
-        }
-    }
+void dealokasi(address P) {
+    delete P;
 }
 
-void tampilMatriks(int matriks[3][3]) {
-    for (int i = 0; i < 3; i++) {
-        cout << "[ ";
-        for (int j = 0; j < 3; j++) {
-            cout << matriks[i][j];
-            if (j < 2) cout << "\t";
-        }
-        cout << " ]" << endl;
-    }
+void insertFirst (List &L, address P){
+    P -> next = L.First;
+    L.First = P;
 }
+
+
+void printInfo(List L) {
+    address P = L.First;
+    while (P != Nil) {
+        cout << P->info << " ";
+        P = P->next;
+    }
+    cout << endl;
+}
+
+```
+main.cpp
+
+```C++
+#include "Singlylist.h"
+#include <iostream>
+using namespace std;
 
 int main() {
-    int matriksA[3][3] = {{7, 12, 22}, {31, 6, 41}, {15, 19, 36}};
-    int matriksB[3][3] = {{11, 34, 7}, {3, 25, 41}, {5, 18, 33}};
-    int hasil[3][3];
+    List L;
+    address P1, P2, P3, P4, P5 = Nil;
+    CreateList(L);
 
-    int pilihan;
-    do {
-        cout << "\n Menu Program Matriks \n";
-        cout << "1. Penjumlahan matriks\n";
-        cout << "2. Pengurangan matriks\n";
-        cout << "3. Perkalian matriks\n";
-        cout << "4. Keluar\n";
-        cout << "Pilih menu: ";
-        cin >> pilihan;
+    P1 = alokasi(2);
+    insertFirst(L, P1);
 
-        switch (pilihan) {
-        case 1:
-            jumlahMatriks(matriksA, matriksB, hasil);
-            cout << "Hasil Penjumlahan Matriks:\n";
-            tampilMatriks(hasil);
-            break;
-        case 2:
-            kurangMatriks(matriksA, matriksB, hasil);
-            cout << "Hasil Pengurangan Matriks:\n";
-            tampilMatriks(hasil);
-            break;
-        case 3:
-            kaliMatriks(matriksA, matriksB, hasil);
-            cout << "Hasil Perkalian Matriks:\n";
-            tampilMatriks(hasil);
-            break;
-        case 4:
-            cout << "Program selesai.\n";
-            break;
-        default:
-            cout << "Pilihan tidak valid!\n";
-        }
-    } while (pilihan != 4);
+    P2 = alokasi(0);
+    insertFirst(L, P2);
 
+    P3 = alokasi(8);
+    insertFirst(L, P3);
+
+    P4 = alokasi(12);
+    insertFirst(L, P4);
+
+    P5 = alokasi(9);
+    insertFirst(L, P5);
+
+    printInfo(L); 
     return 0;
 }
 
@@ -549,70 +571,193 @@ int main() {
 ### Output Unguided 1 :
 
 ##### Output 1
-![Screenshot Output Unguided 1_1](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-2/ss-jwb-no1.png)
+![Screenshot Output Unguided 1_1](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-4/ss-jwb-no1.png)
 
-Program ini mendemonstrasikan penggunaan array 2 dimensi dan fungsi prosedural untuk melakukan berbagai operasi dasar matriks.
+Program ini berfungsi untuk membangun struktur data Singly Linked List, menyisipkan beberapa elemen di awal list, dan menampilkan seluruh isi list secara berurutan dari node pertama hingga terakhir.
 
-### 2. Buatlah program menghitung luas dan keliling persegi panjang dengan proses perhitungan
-dan perubahan nilainya menggunakan pointer, seperti berikut:
-1) Buatlah 3 variabel integer di fungsi main(): panjang (beri nilai 10), lebar (beri nilai 5), dan
-luas (beri nilai 0).
-2) Deklarasikan dua pointer: ptrPanjang yang menunjuk ke variabel panjang, dan ptrLebar
-yang menunjuk ke variabel lebar.
-3) Hitung luas persegi panjang tersebut dan simpan hasilnya ke dalam variabel luas.
-Syarat: Proses perhitungan ini wajib menggunakan ptrPanjang dan ptrLebar.
-4) Cetak nilai luas ke layar.
-5) Setelah itu, ubah nilai panjang menjadi 12 dan lebar menjadi 6, juga hanya melalui
-pointer ptrPanjang dan ptrLebar.
-6) Cetak nilai panjang dan lebar yang baru untuk membuktikan bahwa
-nilainya telah berubah.
+### 2. Dari soal Latihan pertama, lakukan penghapusan node 9 menggunakan deleteFirst(), node 2 menggunakan deleteLast(), dan node 8 menggunakan deleteAfter(). Kemudian tampilkan jumlah node yang tersimpan menggunakan nbList() dan lakukan penghapusan seluruh node menggunakan deleteList().
 
+singlylist.h
 
 ```C++
+
+#ifndef SINGLYLIST_H
+#define SINGLYLIST_H
+#define Nil NULL
 
 #include <iostream>
 using namespace std;
 
-int main() {
-    int panjang = 10;
-    int lebar = 5;
-    int luas = 0;
+typedef int infotype;
+typedef struct ElmList *address;
 
-    int *ptrPanjang = &panjang;
-    int *ptrLebar = &lebar;
 
-    cout << "Nilai awal : " << endl;
-    cout << "panjang : " << panjang << endl;
-    cout << "lebar : " << lebar << endl;
+struct ElmList {
+    infotype info;
+    address next;
+};
 
-    luas = (*ptrPanjang) * (*ptrLebar);
 
-    cout << "Hasil Perhitungan :" << endl;
-    cout << "luas Persegi panjang : " << luas << endl;
-    cout << "Keliling persegi panjang = " << 2 * ((*ptrPanjang) + (*ptrLebar)) << endl;
+struct List {
+    address First;
+};
 
-    *ptrPanjang = 12;
-    *ptrLebar = 6;
 
-    luas = (*ptrPanjang) * (*ptrLebar);
-    
-    cout << "Nilai setelah di ubah melalui pointer :" << endl;
-    cout << "Panjang baru : " << panjang << endl;
-    cout << "Lebar baru : " << lebar << endl;
-    cout << "Luas baru : " << luas << endl;
-    cout << "Keliling baru = " << 2 * ((*ptrPanjang) + (*ptrLebar)) << endl;
+void CreateList(List &L);
+address alokasi(infotype x);
+void dealokasi(address &P);
+void printInfo(List L);
+void insertFirst(List &L, address P);
+void deleteFirst(List &L, address &P);
+void deleteLast(List &L, address &P);
+void deleteAfter(List &L, address Prec, address &P);
+int nbList(List L);
+void deleteList(List &L);
+
+
+#endif
+```
+singlylist.cpp
+
+```C++
+#include "singlylist.h"
+#include <iostream>
+using namespace std;
+
+void CreateList(List &L) {
+    L.First = Nil;
+}
+
+address alokasi(infotype x) {
+    address P = new ElmList;
+    if (P != Nil) {
+        P->info = x;
+        P->next = Nil;
+    }
+    return P;
+}
+
+void dealokasi(address &P) {
+    delete P;
+    P = Nil;
+}
+
+void insertFirst(List &L, address P) {
+    P->next = L.First;
+    L.First = P;
+}
+
+void printInfo(List L) {
+    address P = L.First;
+    while (P != Nil) {
+        cout << P->info;
+        if (P->next != Nil) cout << " ";
+        P = P->next;
+    }
+    cout << endl;
+}
+
+
+void deleteFirst(List &L, address &P) {
+    if (L.First != Nil) {
+        P = L.First;
+        L.First = L.First->next;
+        P->next = Nil;
+    }
+}
+
+
+void deleteLast(List &L, address &P) {
+    address Q = L.First;
+    if (Q == Nil) {
+        P = Nil;
+    } else if (Q->next == Nil) {
+        P = Q;
+        L.First = Nil;
+    } else {
+        while (Q->next->next != Nil) {
+            Q = Q->next;
+        }
+        P = Q->next;
+        Q->next = Nil;
+    }
+}
+
+void deleteAfter(List &L, address Prec, address &P) {
+    if (Prec != Nil && Prec->next != Nil) {
+        P = Prec->next;
+        Prec->next = P->next;
+        P->next = Nil;
+    }
+}
+
+
+int nbList(List L) {
+    int count = 0;
+    address P = L.First;
+    while (P != Nil) {
+        count++;
+        P = P->next;
+    }
+    return count;
+}
+
+void deleteList(List &L) {
+    address P;
+    while (L.First != Nil) {
+        deleteFirst(L, P);
+    }
+}
+
+```
+main.cpp
+
+```C++
+#include "singlylist.h"
+#include <iostream>
+using namespace std;
+
+int main(){
+    List L;
+    address P1, P2, P3, P4, P5 = Nil;
+    CreateList(L);
+    P1 = alokasi(2);
+    insertFirst(L, P1);
+
+    P2 = alokasi(0);
+    insertFirst(L, P2);
+
+    P3 = alokasi(8);
+    insertFirst(L, P3);
+
+    P4 = alokasi(12);
+    insertFirst(L, P4);
+
+    P5 = alokasi(9);
+    insertFirst(L, P5);
+
+    deleteFirst(L, P1);
+    deleteLast(L,P5);
+
+    address P;
+    deleteAfter(L, P4, P);
+    dealokasi(P);
+    printInfo(L);
+    cout << "Jumlah node : " << nbList(L) << endl;
+    deleteList(L);
+    cout << "- List berhasil terhapus -" << endl;
+    cout << "Jumlah node : " << nbList(L) << endl;
 
     return 0;
 }
-
 ```
 ### Output Unguided 2 :
 
 ##### Output 1
-![Screenshot Output Unguided 1_2](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-2/ss-jwb-no2.png)
+![Screenshot Output Unguided 1_2](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-4/ss-jwb-no2.png)
 
 
-Program tersebut berfungsi untuk menghitung luas dan keliling persegi panjang menggunakan pointer.
+Program ini berfungsi untuk membuat dan memanipulasi struktur data Singly Linked List, kemudian melakukan operasi penghapusan elemen (di awal, akhir, dan setelah elemen tertentu). Setelah itu, program menghitung jumlah node yang tersisa menggunakan nbList() dan menghapus seluruh node dari memori dengan deleteList().
 
 
 ## Kesimpulan
