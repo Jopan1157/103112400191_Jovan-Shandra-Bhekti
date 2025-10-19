@@ -761,8 +761,7 @@ Program ini berfungsi untuk membuat dan memanipulasi struktur data Singly Linked
 
 
 ## Kesimpulan
-Dalam praktikum modul 2, membahas tentang array , pointer, dan prosedur dalam bahasa pemrograman c++. Penggunaan array memungkinkan pengolahan data dalam jumlah besar secara efisien tanpa harus mendeklarasikan banyak variabel. Sementara itu konsep pointer memberikan fleksibilitas tinggi dalam pengelolaan memori dan efisiensi program, terutama pada pengolahan array dinamis dan struktur data kompleks seperti linked list dan tree. Selain itu, penggunaan fungsi atau prosedur membantu memecah program menjadi bagian bagian kecil yang terstruktur dan mudah di kelola. Dengan menggabungkan konsep array dan pointer di dalam fungsi, programmer dapat membuat kode yang lebih efisien, modular, dan mudah dibaca.
-
+Hasil praktikum Modul 4 tentang Singly Linked List menunjukkan bahwa struktur data ini adalah salah satu jenis struktur data dinamis yang terdiri dari elemen yang terhubung melalui pointer. Setiap node atau elemen terdiri dari dua komponen: data (yang berfungsi untuk menyimpan nilai atau informasi) dan pointer next (yang berfungsi sebagai penunjuk ke node berikutnya).
 ## Referensi
 [1] Franz, A. (2020). Struktur Data dengan C++. Samarinda: Politeknik Negeri Samarinda Press. ISBN 978-623-5771-03-8.
 [2] Ramadhani, C. (2021). Algoritma Pemrograman dan Struktur Data Menggunakan C++. Denpasar: Primakara University Press.
