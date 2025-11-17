@@ -609,7 +609,7 @@ int main(){
 ### Output Unguided 1-3 :
 
 ##### Output 1
-![Screenshot Output Unguided 1-3] (https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-7/ss-jwb-no1.png)
+![Screenshot Output Unguided 1-3](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-7/ss-jwb-no1.png)
 
 Stack dapat disusun dengan array info berukuran hingga dua puluh elemen, dengan indeks top digunakan sebagai penanda elemen teratas. Operasi dasar yang dapat dilakukan program termasuk membuat stack (CreateStack), menambah elemen (push), menghapus elemen teratas (pop), memeriksa apakah stack kosong atau penuh (isEmpty, isFull), menampilkan isi stack dari atas ke bawah (printInfo), dan membalik urutan elemen stack menggunakan dua stack sementara (balikStack). Program juga memiliki fungsi pushAscending, yang memungkinkan untuk memasukkan elemen baru sambil menjaga agar stack tetap terurut ke atas dengan bantuan dua stack temporer. Fungsi getInputStream juga tersedia dalam program, yang dapat membaca setiap karakter dengan menggunakan cin.get(), mengonversinya menjadi angka, dan memasukkannya ke dalam stack sampai pengguna menekan ENTER. Seluruh fitur diuji pada fungsi main: operasi dasar stack, push ascending, dan input stream, lalu setiap hasilnya ditampilkan.
 
