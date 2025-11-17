@@ -358,7 +358,7 @@ Dengan menggunakan array, program ini dapat mengelola struktur data stack. Stack
 
 ## Unguided 
 
-### 1. 1. Buatlah ADT Stack menggunakan ARRAY sebagai berikut di dalam file “stack.h”:
+1. TBuatlah ADT Stack menggunakan ARRAY sebagai berikut di dalam file “stack.h”:
 Type infotype : integer
 Type Stack <
 info : array [20] of integer
@@ -394,150 +394,12 @@ balikStack(S);
 printInfo(S);
 return 0;
 }
-
-stack.h
-
-```C++
-#ifndef STACK_H
-#define STACK_H
-
-#include <iostream>
-using namespace std;
-
-#define MaxEl 20
-#define Nil -1
-
-typedef int infotype;
-
-struct Stack {
-    infotype info[MaxEl];
-    int top;
-};
-
-void CreateStack(Stack &S);
-void push(Stack &S, infotype x);
-infotype pop(Stack &S);
-void printInfo(Stack S);
-void balikStack(Stack &S);
-
-#endif
-
-```
-
-stack.cpp
-
-```C++
-#include "stack.h"
-using namespace std;
-
-void CreateStack(Stack &S) {
-    S.top = Nil;
-}
-
-bool isEmpty(Stack S) {
-    return S.top == Nil;
-}
-
-bool isFull(Stack S) {
-    return S.top == MaxEl - 1;
-}
-
-void push(Stack &S, infotype x) {
-    if (!isFull(S)) {
-        S.top++;
-        S.info[S.top] = x;
-    } else {
-        cout << "Stack penuh!" << endl;
-    }
-}
-
-infotype pop(Stack &S) {
-    if (!isEmpty(S)) {
-        infotype x = S.info[S.top];
-        S.top--;
-        return x;
-    } else {
-        cout << "Stack kosong!" << endl;
-        return -999;
-    }
-}
-
-void printInfo(Stack S) {
-    if (isEmpty(S)) {
-        cout << "Stack kosong" << endl;
-    } else {
-        cout << "[TOP] ";
-        for (int i = S.top; i >= 0; i--) {
-            cout << S.info[i] << " ";
-        }
-        cout << endl;
-    }
-}
-
-void balikStack(Stack &S) {
-    Stack temp1, temp2;
-    CreateStack(temp1);
-    CreateStack(temp2);
-
-    while (!isEmpty(S)) {
-        push(temp1, pop(S));
-    }
-
-    while (!isEmpty(temp1)) {
-        push(temp2, pop(temp1));
-    }
-
-    while (!isEmpty(temp2)) {
-        push(S, pop(temp2));
-    }
-}
-
-
-```
-main.cpp
-
-```C++
-#include "stack.h"
-#include <iostream>
-
-using namespace std;
-
-int main() {
-    cout << "Hello world!" << endl;
-
-    Stack S;
-    CreateStack(S);
-
-    push(S, 3);
-    push(S, 4);
-    push(S, 8);
-    pop(S);
-    push(S, 2);
-    push(S, 3);
-    pop(S);
-    push(S, 9);
-
-    printInfo(S);
-
-    cout << "balik stack" << endl;
-    balikStack(S);
-    printInfo(S);
-
-    return 0;
-}
-
-```
-### Output Unguided 1 :
-
-##### Output 1
-![Screenshot Output Unguided 1_1](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-7/ss-jwb-no1.png)
-
-..........
-
-
-### 2. Tambahkan prosedur pushAscending( in/out S : Stack, in x : integer)
+Gambar 7-12 main stack
+2. Tambahkan prosedur pushAscending( in/out S : Stack, in x : integer)
 int main()
 {
+Gambar 7-11 Output stack
+STRUKTUR DATA 65
 cout << "Hello world!" << endl;
 Stack S;
 createStack(S);
@@ -553,16 +415,7 @@ balikStack(S);
 printInfo(S);
 return 0;
 }
-
-
-### Output Unguided 2 :
-
-##### Output 1
-![Screenshot Output Unguided 1_2](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-7/ss-jwb-no1.png)
-
-..........
-
-
+Gambar 7-14 main stack dengan push ascending
 3. Tambahkan prosedur getInputStream( in/out S : Stack ). Prosedur akan terus membaca dan
 menerima input user dan memasukkan setiap input ke dalam stack hingga user menekan
 tombol enter. Contoh: gunakan cin.get() untuk mendapatkan inputan user.
@@ -584,29 +437,26 @@ stack.h
 ```C++
 #ifndef STACK_H
 #define STACK_H
-
 #include <iostream>
 using namespace std;
-
 #define MaxEl 20
 #define Nil -1
 
 typedef int infotype;
-
-struct Stack {
+struct Stack{
     infotype info[MaxEl];
     int top;
 };
-
 void CreateStack(Stack &S);
-bool isEmpty(Stack S);
-bool isFull(Stack S);
 void push(Stack &S, infotype x);
 infotype pop(Stack &S);
 void printInfo(Stack S);
 void balikStack(Stack &S);
-void pushAscending(Stack &S, infotype x);
+bool isEmpty(Stack S);
+bool isFull(Stack S);
+void pushAscending(Stack &S, int x);
 void getInputStream(Stack &S);
+
 #endif
 
 
@@ -618,76 +468,92 @@ stack.cpp
 #include "stack.h"
 using namespace std;
 
-void CreateStack(Stack &S) {
+void CreateStack(Stack &S){
     S.top = Nil;
 }
-
-bool isEmpty(Stack S) {
-    return S.top == Nil;
-}
-
-bool isFull(Stack S) {
-    return S.top == MaxEl - 1;
-}
-
-void push(Stack &S, infotype x) {
-    if (!isFull(S)) {
+void push(Stack &S, infotype x){
+    if(!isFull(S)){
         S.top++;
         S.info[S.top] = x;
+    }else{
+        cout << "Stack penuh" << endl;
     }
-}
 
+}
 infotype pop(Stack &S) {
-    if (!isEmpty(S)) {
-        infotype x = S.info[S.top];
-        S.top--;
-        return x;
+    infotype x = -999;  
+    if (!isEmpty(S)) {  
+        x = S.info[S.top];  
+        S.top--;  
+    } else {
+        cout << "Stack Kosong!" << endl;  
     }
-    return -999;
+    return x; 
 }
-
 void printInfo(Stack S) {
-    cout << "[TOP] ";
-    for (int i = S.top; i >= 0; i--) {
-        cout << S.info[i] << " ";
+    if (isEmpty(S)) {  
+        cout << "Stack Kosong" << endl;  
+    } else {
+        cout << "[TOP] ";  
+        for (int i = S.top; i >= 0; i--) {  
+            cout << S.info[i] << " ";  
+        }
+        cout << endl; 
     }
-    cout << endl;
 }
-
 void balikStack(Stack &S) {
-    Stack t1, t2;
-    CreateStack(t1);
-    CreateStack(t2);
+    if (!isEmpty(S)) {  
+        Stack temp1, temp2;  
+        CreateStack(temp1); CreateStack(temp2);  
+        while (!isEmpty(S)) { push(temp1, pop(S)); }  
 
-    while (!isEmpty(S)) push(t1, pop(S));
-    while (!isEmpty(t1)) push(t2, pop(t1));
-    while (!isEmpty(t2)) push(S, pop(t2));
-}
+        while (!isEmpty(temp1)) { push(temp2, pop(temp1)); }  
 
-void pushAscending(Stack &S, infotype x) {
-    Stack temp;
-    CreateStack(temp);
-
-    while (!isEmpty(S) && S.info[S.top] < x) {  
-        push(temp, pop(S));
+        while (!isEmpty(temp2)) { push(S, pop(temp2)); }  
     }
-
+}
+bool isEmpty(Stack S){
+    return S.top == Nil;
+}
+bool isFull(Stack S) {
+    return S.top == MaxEl - 1;  
+}
+void pushAscending(Stack &S, int x){
+    Stack Temp1, Temp2;
+    CreateStack(Temp1);
+    CreateStack(Temp2);
+    int t;
+    while(!isEmpty(S)){
+        t = pop(S);
+        if (t < x){
+            push(Temp1, t);
+            //break;
+        }else{
+            push(Temp2, t);
+        }
+    }
+    while(!isEmpty(Temp1)){
+        push(S, pop(Temp1));
+    }
     push(S, x);
-
-    while (!isEmpty(temp)) {
-        push(S, pop(temp));
+    while(!isEmpty(Temp2)){
+       
+        push(S, pop(Temp2));
     }
 }
 void getInputStream(Stack &S) {
     char c;
 
-    while (cin.get(c) && c != '\n') {
-        if (isdigit(c)) {
-            int x = c - '0';   
-            push(S, x);       
-        }
+    cout << "Masukkan input: ";
+
+    cin.get(c);           
+
+    while (c != '\n') {  
+        push(S, c - '0'); 
+        cin.get(c);       
     }
 }
+
 ```
 main.cpp
 
@@ -695,34 +561,63 @@ main.cpp
 #include "stack.h"
 #include <iostream>
 using namespace std;
+int main(){
+    cout << "Hello World!" << endl;
+    Stack S;
+    CreateStack(S);
+    push(S, 3);
+    push(S, 4);
+    push(S, 8);
+    pop(S);
+    push(S,2);
+    push(S, 3);
+    pop(S);
+    push(S, 9);
+    printInfo(S);
+    cout << "balik stack" << endl;
+    balikStack(S);
+    printInfo(S);
+    cout << endl;
 
-int main() {
-cout << "Hello world!" << endl;
-Stack S;
-CreateStack(S);
+    //push ascending
+    cout << "Hello World!" << endl;
+    CreateStack(S);
+    pushAscending(S, 3);
+    pushAscending(S, 4);
+    pushAscending(S, 8);
+    pushAscending(S, 2);
+    pushAscending(S, 3);
+    pushAscending(S, 9);
+    printInfo(S);
+    cout << "balik stack" << endl;
+    balikStack(S);
+    printInfo(S);
+    cout << endl;
 
-getInputStream(S);
-printInfo(S);
+    //input stream
+    cout << "Hello World!" << endl;
+    CreateStack(S);
+    getInputStream(S);
+    printInfo(S);
+    cout << "balik stack" << endl;
+    balikStack(S);
+    printInfo(S);
 
-cout << "balik stack" << endl;
-balikStack(S);
-printInfo(S);
-
+    return 0;
 }
-
 ```
-### Output Unguided 3 :
+### Output Unguided 1-3 :
 
 ##### Output 1
-![Screenshot Output Unguided 1_3] (https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-7/ss-jwb-no1.png)
+![Screenshot Output Unguided 1-3] (https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-7/ss-jwb-no1.png)
 
-..........
+Stack dapat disusun dengan array info berukuran hingga dua puluh elemen, dengan indeks top digunakan sebagai penanda elemen teratas. Operasi dasar yang dapat dilakukan program termasuk membuat stack (CreateStack), menambah elemen (push), menghapus elemen teratas (pop), memeriksa apakah stack kosong atau penuh (isEmpty, isFull), menampilkan isi stack dari atas ke bawah (printInfo), dan membalik urutan elemen stack menggunakan dua stack sementara (balikStack). Program juga memiliki fungsi pushAscending, yang memungkinkan untuk memasukkan elemen baru sambil menjaga agar stack tetap terurut ke atas dengan bantuan dua stack temporer. Fungsi getInputStream juga tersedia dalam program, yang dapat membaca setiap karakter dengan menggunakan cin.get(), mengonversinya menjadi angka, dan memasukkannya ke dalam stack sampai pengguna menekan ENTER. Seluruh fitur diuji pada fungsi main: operasi dasar stack, push ascending, dan input stream, lalu setiap hasilnya ditampilkan.
 
 
 
 ## Kesimpulan
 
-........
+ Linked List dan Stack adalah struktur data linier yang berbeda, tetapi keduanya sangat penting untuk pengelolaan data dinamis karena memungkinkan penyimpanan data yang fleksibel karena setiap elemen dihubungkan melalui pointer tanpa perlu berada pada lokasi memori yang berurutan. Di sisi lain, Stack berkonsentrasi pada mekanisme pengambilan dan penyimpanan data menggunakan aturan LIFO, yang berarti elemen terakhir yang masuk akan menjadi elemen pertama yang keluar. Kedua struktur data ini menyelesaikan banyak masalah, terutama berkaitan dengan pengelolaan memori, akses data, dan proses yang membutuhkan urutan operasi tertentu.
 
 ## Referensi
 
