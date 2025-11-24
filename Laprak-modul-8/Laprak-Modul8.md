@@ -2,7 +2,7 @@
 <p align="center">Jovan Shandra Bhekti - 103112400191</p>
 
 ## Dasar Teori
-........
+Struktur data adalah cara untuk mengatur, menyimpan, dan mengelola data di dalam komputer agar mudah diakses, diproses, dan diubah. Struktur data membantu programmer memahami bagaimana data saling terhubung, sehingga memudahkan pencarian dan perubahan data sesuai kebutuhan aplikasi. Menggunakan struktur data yang tepat akan membantu programmer menjadi lebih baik dalam mengelola data dan membuat program berjalan lebih cepat dalam memprosesnya.[1]
 
 ### A. Queue
 Queue merupakan struktur data yang dapat diumpamakan seperti sebuah antrean,Jadi prinsip dasar dalam Queue adalah FIFO (First in Fisrt out), proses yang pertama masuk akan diakses terlebih dahulu. Dalam pengimplementasian
@@ -217,7 +217,7 @@ int main(){
     return 0;
 }
 ```
-Program ini ........
+Program tersebut mengimplementasikan struktur data Queue (antrian) menggunakan linked list. Setiap elemen queue disimpan dalam node yang berisi data angka dan pointer ke node berikutnya. Queue memiliki dua pointer utama, yaitu head untuk menunjuk elemen paling depan dan tail untuk menunjuk elemen paling belakang. Program menyediakan fungsi dasar seperti createQueue untuk inisialisasi, isEmpty untuk mengecek apakah queue kosong, alokasi dan dealokasi untuk membuat serta menghapus node, enqueue untuk menambahkan elemen ke bagian belakang queue, dan dequeue untuk menghapus elemen dari bagian depan queue. Selain itu, terdapat fitur tambahan seperti updateQueue yang memungkinkan pengguna mengganti nilai node tertentu berdasarkan posisi, viewQueue untuk menampilkan seluruh isi queue, dan searchData untuk mencari apakah suatu nilai terdapat dalam queue. 
 
 ### 2. 
 
@@ -339,7 +339,7 @@ int main(){
     return 0;
 }
 ```
-program ini berfungsi........
+Program tersebut mengimplementasikan Circular Queue menggunakan array berukuran tetap (MAX_QUEUE = 5). Struktur queue menyimpan tiga informasi penting: indeks head sebagai posisi elemen depan, tail sebagai posisi elemen belakang berikutnya, serta count sebagai jumlah elemen yang sedang tersimpan. Fungsi createQueue menginisialisasi queue agar kosong, sementara isEmpty dan isFull digunakan untuk mengecek kondisi queue. Operasi enqueue menambahkan data ke posisi tail, lalu memutar indeks menggunakan operasi modulus agar bersifat circular. Sebaliknya, dequeue mengambil elemen dari head dan menggeser posisi kepala secara circula
 
 
 ## Unguided 
@@ -507,7 +507,7 @@ int main() {
 ##### Output 1
 ![Screenshot Output Unguided 1](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-8/ss-jwb-no1.png)
 
-.......
+Program tersebut berfungsi mengimplementasikan ADT Queue menggunakan array statis dengan mekanisme head dan tail yang bergerak maju (Alternatif 2). Program mampu melakukan operasi dasar queue seperti enqueue, dequeue, memeriksa kondisi kosong atau penuh, serta menampilkan seluruh elemen queue beserta posisi head dan tail setiap setelah operasi dilakukan. Dengan demikian, program ini menunjukkan cara kerja struktur data antrian secara sequential menggunakan array berindeks tetap.
 
 2. Buatlah implementasi ADT Queue pada file “queue.cpp” dengan menerapkan mekanisme
 queue Alternatif 2 (head bergerak, tail bergerak).
@@ -643,7 +643,7 @@ int main() {
 ##### Output 1
 ![Screenshot Output Unguided 2](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-8/ss-jwb-no2.png)
 
-.......
+Program ini berfungsi untuk mengimplementasikan struktur data Queue menggunakan array statis dengan mekanisme head dan tail yang bergerak maju (Alternatif 2). Melalui fungsi createQueue, antrian diinisialisasi dalam keadaan kosong, sementara operasi isEmptyQueue dan isFullQueue digunakan untuk memeriksa apakah antrian kosong atau penuh. Proses penambahan data dilakukan melalui fungsi enqueue yang menempatkan elemen baru di posisi tail, dan penghapusan elemen dilakukan dengan fungsi dequeue yang mengambil data dari posisi head. Selain itu, fungsi printInfo digunakan untuk menampilkan isi antrian serta posisi head dan tail setelah setiap operasi. Program pada main.cpp memperlihatkan alur eksekusi queue secara bertahap sehingga menunjukkan bagaimana data masuk dan keluar dari antrian sesuai prinsip FIFO (First In, First Out).
 
 3. Buatlah implementasi ADT Queue pada file “queue.cpp” dengan menerapkan mekanisme
 queue Alternatif 3 (head dan tail berputar)
@@ -780,13 +780,13 @@ int main() {
 ##### Output 1
 ![Screenshot Output Unguided 3](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-8/ss-jwb-no3.png)
 
-.......
+Program ini berfungsi untuk mengimplementasikan struktur data queue menggunakan mekanisme circular queue, yaitu head dan tail yang bergerak melingkar dengan bantuan operasi modulo. Program dapat menginisialisasi antrian, memeriksa apakah antrian kosong atau penuh, menambah data menggunakan enqueue, dan menghapus data dengan dequeue. Selain itu, program juga menampilkan isi antrian dengan mengikuti posisi head hingga tail secara melingkar. Melalui main.cpp, dapat terlihat bagaimana data masuk dan keluar dari antrian secara berurutan sesuai prinsip FIFO dengan penggunaan ruang array yang lebih efisien.
 
 
 ## Kesimpulan
 
-......
+Struktur data adalah bagian penting dari pemrograman karena berfungsi untuk mengatur, menyimpan, dan mengelola data sehingga lebih mudah diakses dan diproses. Jika digunakan dengan benar, program akan berjalan lebih baik dan pengolahan data yang kompleks akan lebih mudah. queue, yang bekerja dengan prinsip FIFO (First In, First Out), adalah struktur data yang paling umum digunakan. Aplikasi seperti penjadwalan proses, pengelolaan antrean tugas, manajemen pesan, dan sistem yang membutuhkan pengolahan data berurutan menggunakan queue. Selain itu, queue memiliki berbagai jenis yang dapat disesuaikan dengan kebutuhan, baik dari segi implementasi maupun penggunaan, seperti Linear Queue dan Circular Queue, maupun dari sisi penggunaan seperti Priority Queue dan Double-ended Queue. 
 
 ## Referensi
 
-[1] 
+[1] Anaraindyah, R. (2024). Struktur data: Pengertian, fungsi, dan penerapannya. Universitas Negeri Surabaya.https://share.google/kfvAZsEHXwWWO9ZVc
