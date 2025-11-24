@@ -505,7 +505,7 @@ int main() {
 ### Output Unguided 1 :
 
 ##### Output 1
-![Screenshot Output Unguided 1](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-7/ss-jwb-no1.png)
+![Screenshot Output Unguided 1](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-8/ss-jwb-no1.png)
 
 .......
 
@@ -641,7 +641,7 @@ int main() {
 ### Output Unguided 2:
 
 ##### Output 1
-![Screenshot Output Unguided 2](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-7/ss-jwb-no1.png)
+![Screenshot Output Unguided 2](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-8/ss-jwb-no2.png)
 
 .......
 
@@ -778,7 +778,7 @@ int main() {
 ### Output Unguided 3:
 
 ##### Output 1
-![Screenshot Output Unguided 3](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-7/ss-jwb-no1.png)
+![Screenshot Output Unguided 3](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-8/ss-jwb-no3.png)
 
 .......
 
