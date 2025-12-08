@@ -2,10 +2,28 @@
 <p align="center">Jovan Shandra Bhekti - 103112400191</p>
 
 ## Dasar Teori
-.....
+
+Tree adalah struktur data non-linear yang digunakan untuk merepresentasikan hubungan hierarkis antar elemen (node). Berbeda dengan array atau linked list yang bersifat linear, tree memiliki bentuk bercabang seperti pohon, di mana setiap node dapat memiliki lebih dari satu anak. Tree terdiri atas root sebagai node utama, node parent, node child, dan node leaf sebagai node tanpa anak. Struktur ini memungkinkan proses pencarian, penyisipan, serta pengelolaan data dilakukan dengan lebih efisien [1].
+
+Secara umum, tree memiliki karakteristik berikut:
+
+Root: node paling atas dalam struktur tree.
+
+Edge: penghubung antara dua node.
+
+Child: node yang berada di bawah node lain.
+
+Parent: node yang memiliki child.
+
+Leaf: node tanpa child.
+
+Subtree: bagian tree yang merupakan tree baru di dalamnya.
+
+Struktur data tree banyak digunakan dalam algoritma pencarian, pengurutan, representasi ekspresi matematika, hingga struktur file sistem operasi karena kemampuannya mengelola data terstruktur secara hierarkis [2].
 
 ### A. Tree
-......
+
+Tree adalah struktur data hierarkis yang terdiri dari sekumpulan node yang saling terhubung menyerupai bentuk pohon. Setiap tree memiliki root (node utama) dan cabang-cabang berupa child, yang membentuk hubungan parent–child
 
 ## Guided 
 
@@ -182,7 +200,7 @@ int main(){
     return 0;
 }
 ```
-Program ......
+program ini berfungsi untuk membangun, mengelola, dan menganalisis struktur Binary Search Tree (BST) menggunakan operasi dasar seperti insert, traversal (pre-order, in-order, post-order), penghitungan jumlah node, dan perhitungan kedalaman tree. Program ini menunjukkan bagaimana BST bekerja dan bagaimana data dapat disusun, dicari, dan diolah secara efisien dalam struktur berbentuk pohon.
 
 ### 2. 
 
@@ -543,7 +561,7 @@ int main(){
     return 0;
 }
 ```
-Program tersebut .........
+program ini berfungsi sebagai implementasi komprehensif struktur data Binary Search Tree (BST) yang mencakup operasi pembuatan tree, penyisipan data, penelusuran data, pencarian, penghapusan node, penghitungan informasi tree, serta penghapusan seluruh tree. Program ini menunjukkan cara kerja BST secara lengkap mulai dari konstruksi, manipulasi, hingga perawatan struktur data.
 
 
 ## Unguided 
@@ -725,13 +743,14 @@ int main() {
 ##### Output 1
 ![Screenshot Output Unguided 1-3](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-10/ss-jwb-no1-3.png)
 
-Program tersebut .....
+Program ini berfungsi sebagai implementasi lengkap dari Binary Search Tree (BST) menggunakan bahasa C++. Program ini mampu melakukan berbagai operasi penting dalam struktur data BST, mulai dari pembuatan node, penyisipan data, pencarian, penghapusan, traversal, hingga perhitungan informasi statistik mengenai tree.
 
 
 ## Kesimpulan
 
-.....
+Pada praktikum modul 10 ini, Binary Search Tree (BST) berhasil diimplementasikan untuk memahami cara kerja struktur data berbentuk hierarki. Melalui berbagai operasi seperti insert, traversal (in-order, pre-order, post-order), searching, most-left/right, delete node, serta penghitungan jumlah node dan kedalaman tree, dapat disimpulkan bahwa BST mampu mengelola data secara efisien dan terstruktur. BST mempermudah proses pencarian dan pengolahan data karena setiap node disusun berdasarkan nilai tertentu. Selain itu, penerapan fitur tambahan seperti penghapusan node dan penghapusan seluruh tree memberikan gambaran lengkap mengenai manajemen memori dan pemeliharaan struktur data. Secara keseluruhan, praktikum ini memperkuat pemahaman mengenai konsep dasar dan implementasi BST dalam pemrograman.
 
 ## Referensi
 
-[1] .....
+[1] Wibowo, F., & Sunaryo, A. (2020). Analisis Struktur Data Tree dalam Pengembangan Algoritma Pencarian. Jurnal Teknologi Informatika, 14(2), 45–52.
+[2] Putra, D. A., & Nugroho, R. (2019). Implementasi Struktur Data Tree pada Sistem Informasi Hierarki Organisasi. Jurnal Informatika dan Sistem Informasi, 5(1), 33–40.
