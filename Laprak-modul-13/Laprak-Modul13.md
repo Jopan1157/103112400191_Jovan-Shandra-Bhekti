@@ -3,11 +3,13 @@
 
 ## Dasar Teori
 
-..........
+Multi Linked List adalah pengembangan dari struktur linked list yang memungkinkan sebuah node memiliki lebih dari satu relasi. Struktur ini umumnya terdiri dari node parent dan node child, di mana satu node parent dapat memiliki satu atau lebih node child. Hubungan tersebut membentuk relasi satu ke banyak (one-to-many) dan banyak digunakan untuk merepresentasikan data yang bersifat hierarkis (Rosa & Shalahuddin, 2016).
+
+Dalam implementasinya, setiap node parent pada Multi Linked List memiliki sebuah linked list anak (child list) yang berisi node-node child. Penggunaan double linked list pada struktur parent dan child memungkinkan proses penelusuran data dilakukan secara dua arah, sehingga mempermudah operasi penambahan, penghapusan, dan pencarian data (Sukamto & Shalahuddin, 2018).
 
 ### A. Multi Linked list
 
-.....
+Multi Linked List adalah struktur data linked list bertingkat di mana setiap node utama (parent) dapat memiliki satu atau lebih linked list lain (child) yang terhubung dengannya. Struktur ini digunakan untuk merepresentasikan hubungan satu ke banyak (one-to-many), sehingga data dapat dikelola secara hierarkis dan terorganisir.
 
 ## Guided 
 
@@ -341,7 +343,7 @@ int main(){
 
 }
 ```
-program ini berfungsi untuk membangun, mengelola, dan menganalisis struktur Binary Search Tree (BST) menggunakan operasi dasar seperti insert, traversal (pre-order, in-order, post-order), penghitungan jumlah node, dan perhitungan kedalaman tree. Program ini menunjukkan bagaimana BST bekerja dan bagaimana data dapat disusun, dicari, dan diolah secara efisien dalam struktur berbentuk pohon.
+Program ini merupakan implementasi Multi Linked List menggunakan bahasa pemrograman C++, di mana node parent merepresentasikan kategori makanan dan node child merepresentasikan data makanan. Setiap parent memiliki list child sendiri sehingga membentuk hubungan satu ke banyak. Program ini mendukung operasi insert, delete, search, dan print untuk mengelola data secara terstruktur dan dinamis.
 
 ### 2. 
 
@@ -700,23 +702,26 @@ int main(){
 ### Output Unguided 1-3 :
 
 ##### MLL Golongan Hewan
-![Screenshot Output Unguided 1](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-10/ss-jwb-no1.png)
+![Screenshot Output Unguided 1](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-13/ss-jwb-no1.png)
 
 ##### pencarian hewan berdasarkan ekor false
 
-![Screenshot Output Unguided 2](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-10/ss-jwb-no2.png)
+![Screenshot Output Unguided 2](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-13/ss-jwb-no2.png)
 
 ##### Operasi Delete
 
-![Screenshot Output Unguided 1](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-10/ss-jwb-no3.png)
+![Screenshot Output Unguided 1](https://github.com/Jopan1157/103112400191_Jovan-Shandra-Bhekti/blob/main/Laprak-modul-13/ss-jwb-no3.png)
 
 
 Program ini merupakan implementasi Multi-Linked List yang memodelkan hubungan antara golongan hewan sebagai node parent dan data hewan sebagai node child. Setiap node parent menyimpan satu golongan hewan dan memiliki list anak yang berisi data hewan sesuai golongannya. Program memungkinkan untuk melakukan operasi seperti membuat list, mengalokasikan dan mengalihkan node, menambah dan menghapus data parent dan anak, mencetak struktur multilevel linked list secara keseluruhan, dan pencacah.
 
 ## Kesimpulan
 
-.......
+Berdasarkan hasil praktikum yang telah dilakukan, dapat disimpulkan bahwa struktur data Multi Linked List dapat digunakan untuk merepresentasikan hubungan satu ke banyak (one-to-many) secara efektif. Pada program yang dibuat, Multi Linked List digunakan untuk memodelkan hubungan antara golongan hewan sebagai node parent dan data hewan sebagai node child.
+Program berhasil mengimplementasikan berbagai operasi dasar seperti pembuatan list, penambahan data parent dan child, penghapusan data, pencarian berdasarkan kriteria tertentu, serta pencetakan struktur data. Dengan menggunakan Multi Linked List, data dapat dikelola secara terstruktur, dinamis, dan mudah dikembangkan, sehingga cocok digunakan untuk permasalahan yang melibatkan data hierarkis.
 
 ## Referensi
 
-[1] ....
+[1] Rosa, A. S., & Shalahuddin, M., Rekayasa Perangkat Lunak Terstruktur dan Berorientasi Objek, Bandung: Informatika, 2016.
+
+[2] Sukamto, R. A., & Shalahuddin, M., Pemrograman Berorientasi Objek, Bandung: Informatika, 2018.
