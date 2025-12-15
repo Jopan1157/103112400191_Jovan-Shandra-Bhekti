@@ -156,4 +156,4 @@ void deleteList(linkedlist &List){
     }
     List.first = Nil; 
     cout << "List sudah terhapus!" << endl;
-}
+}                                                                                                                                                                                               
