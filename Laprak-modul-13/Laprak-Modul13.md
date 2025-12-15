@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul 10 - Multi Linked List</h1>
+# <h1 align="center">Laporan Praktikum Modul 13 - Multi Linked List</h1>
 <p align="center">Jovan Shandra Bhekti - 103112400191</p>
 
 ## Dasar Teori
