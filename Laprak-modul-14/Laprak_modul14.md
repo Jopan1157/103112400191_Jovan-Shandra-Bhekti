@@ -664,4 +664,4 @@ Selain itu, algoritma Depth First Search (DFS) dan Breadth First Search (BFS) da
 
 ## Referensi
 [1] S. Wahyuni dan R. Kurniawan, “Implementasi Struktur Data Graph pada Sistem Informasi,” Jurnal Teknologi Informasi dan Komputer, vol. 5, no. 2, pp. 45–52, 2019.
-[4] M. Hidayat, “Implementasi Algoritma DFS dan BFS pada Struktur Data Graph,” Jurnal Teknik Informatika, vol. 9, no. 1, pp. 25–32, 2022.
+[2] M. Hidayat, “Implementasi Algoritma DFS dan BFS pada Struktur Data Graph,” Jurnal Teknik Informatika, vol. 9, no. 1, pp. 25–32, 2022.
