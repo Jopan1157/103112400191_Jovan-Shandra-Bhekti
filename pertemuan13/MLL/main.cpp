@@ -16,7 +16,7 @@ int main(){
     NodeParent K03 = alokasiNodeParent("K03", "desert");
     insertLastParent(LInduk, K03);
     cout << endl;
-
+    
     NodeChild M01 = alokasiNodeChild("M01", "nasi goreng spesial");
     insertLastChild(K01->L_Anak, M01);
     NodeChild M02 = alokasiNodeChild("M02", "ayam bakar madu");

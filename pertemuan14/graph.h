@@ -1,0 +1,33 @@
+#ifndef graph_h
+#define graph_h
+#include <iostream>
+using namespace std;
+
+typedef char infoGraph;
+typedef struct ElmNode *adrNode;
+typedef struct ElmEdge *adrEdge;
+
+struct ElmNode {
+    infoGraph info;
+    bool visited;
+    adrEdge firstEdge;
+    adrNode next;
+};
+
+struct ElmEdge {
+    adrNode tujuan;
+    adrEdge next;
+};
+
+struct Graph {
+    adrNode first;
+};
+
+// Prototype
+void createGraph(Graph &G);
+adrNode allocateNode(infoGraph x);
+void insertNode(Graph &G, infoGraph x);
+void connectNode(Graph &G, infoGraph start, infoGraph end);
+void printGraph(Graph G);
+
+#endif
